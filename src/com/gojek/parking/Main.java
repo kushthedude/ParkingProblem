@@ -17,7 +17,6 @@ public class Main {
             // If we reach the end-of-file,
             // or if the user types "quit", then quit
             if ((line == null) || line.equals("quit")) break;
-            // Try to parse the line, and compute and print the factorial
             try {
                 String x = line;
                 String[] inputCommand = x.split(" ");
