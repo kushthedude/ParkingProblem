@@ -18,6 +18,47 @@ public class Main {
             // or if the user types "quit", then quit
             if ((line == null) || line.equals("quit")) break;
             // Try to parse the line, and compute and print the factorial
-            
+            try {
+                String x = line;
+                String[] inputCommand = x.split(" ");
+                String command = inputCommand[0].toLowerCase();
+                switch (command){
+                    case Constants.CREATE:
+                        int size = Integer.parseInt(inputCommand[1]);
+                        parkingLot = new ParkingLot(size);
+                        break;
+                    case Constants.PARK:
+                        String regNum = inputCommand[1];
+                        String color = inputCommand[2];
+                        assert parkingLot != null;
+                        parkingLot.parkCar(regNum, color);
+                        break;
+                    case Constants.LEAVE:
+                        Integer slotNum = Integer.parseInt(inputCommand[1]);
+                        assert parkingLot != null;
+                        parkingLot.exitCar(slotNum);
+                        break;
+                    case Constants.STATUS:
+                        assert parkingLot != null;
+                        parkingLot.status();
+                        break;
+                    case Constants.REG_NO_COLOR:
+                        assert parkingLot != null;
+                        parkingLot.regNumberFromColor(inputCommand[1]);
+                        break;
+                    case Constants.SLOT_NO_CAR:
+                        assert parkingLot != null;
+                        parkingLot.getSlotFromRegistration(inputCommand[1]);
+                        break;
+                    default:
+                        System.out.println("Please provide a valid input");
+                }
+            }
+            // If anything goes wrong, display a generic error message
+            catch (InvalidSlotException e) { System.out.println(e); }
+            catch (EmptyException e) { System.out.println(e); }
+            catch (ParkingFullException e) { System.out.println(e); }
+            catch(Exception e) { System.out.println("Invalid Input"); }
+        }
     }
 }
