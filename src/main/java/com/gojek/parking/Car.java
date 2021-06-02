@@ -9,12 +9,8 @@ public class Car {
         return color;
     }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public Car(String registration_no, String color) {
-       this(registration_no, color, 0);
+        this(registration_no, color, 0);
     }
 
     public Car(String registration_no, String color, int slot_no) {
@@ -27,9 +23,6 @@ public class Car {
         return registration_no;
     }
 
-    public void setRegistration_no(String registration_no) {
-        this.registration_no = registration_no;
-    }
 
     public int getSlot_no() {
         return slot_no;

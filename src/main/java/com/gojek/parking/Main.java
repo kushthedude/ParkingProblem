@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         ParkingLot parkingLot = null;
         BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
-        // Loop forever
+        // Loop forever./
         for(;;) {
             // Display a prompt to the user
             System.out.print("ParkingLot>");
@@ -29,8 +29,9 @@ public class Main {
                     case Constants.PARK:
                         String regNum = inputCommand[1];
                         String color = inputCommand[2];
+                        Car car = new Car(regNum, color);
                         assert parkingLot != null;
-                        parkingLot.parkCar(regNum, color);
+                        parkingLot.parkCar(car);
                         break;
                     case Constants.LEAVE:
                         Integer slotNum = Integer.parseInt(inputCommand[1]);

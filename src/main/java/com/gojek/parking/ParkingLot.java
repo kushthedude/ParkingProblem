@@ -9,7 +9,16 @@ import java.util.*;
 public class ParkingLot {
     private int slots = -1;
     private Map<Integer, Car> slotToCar;
+
+    public int getSlots() {
+        return slots;
+    }
+
     private TreeSet<Integer> emptySlots;
+
+    public TreeSet<Integer> getEmptySlots() {
+        return emptySlots;
+    }
 
     public ParkingLot(int slots) {
         this.slots = slots;
@@ -21,15 +30,14 @@ public class ParkingLot {
         System.out.println("Parking Lot created with capacity " + slots);
     }
 
-    public void parkCar(String registrationNumber, String color) throws ParkingFullException {
+    public void parkCar(Car car) throws ParkingFullException {
         if(emptySlots.isEmpty()){
             throw new ParkingFullException("parking is full");
         }
-        Car car = new Car(registrationNumber, color);
         int slotGiven = emptySlots.pollFirst();
         car.setSlot_no(slotGiven);
         slotToCar.put(slotGiven, car);
-        System.out.println("Allocated slot " + slotGiven + " to car " + registrationNumber + " with color " + color);
+        System.out.println("Allocated slot " + slotGiven + " to car " + car.getRegistration_no() + " with color " + car.getColor());
     }
 
     public void exitCar(int slotNumber) throws InvalidSlotException {
