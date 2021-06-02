@@ -1,3 +1,5 @@
+[![Java CI with Gradle](https://github.com/kushthedude/ParkingProblem/actions/workflows/gradle.yml/badge.svg)](https://github.com/kushthedude/ParkingProblem/actions/workflows/gradle.yml)
+
 # ParkingProblem
 
 ### How to run?
