@@ -28,7 +28,7 @@ public class ParkingLotTest{
 
     @Test
     public void ParkingLot_canCreateLot(){
-        assertEquals(3, lot.getSlots());
+        assertEquals(1, lot.getSlots());
         assertEquals("ParkingLotcreatedwithcapacity1", systemOutRule.getLog().replaceAll("\\s",""));
     }
 
@@ -38,8 +38,6 @@ public class ParkingLotTest{
         assertEquals("ParkingLotcreatedwithcapacity1Allocatedslot0tocartestwithcolortest", systemOutRule.getLog().replaceAll("\\s",""));
         assertEquals(true, lot.getEmptySlots().isEmpty());
         assertEquals(0, car.getSlot_no());
-        lot.parkCar(car);
-
     }
 
     @Test
