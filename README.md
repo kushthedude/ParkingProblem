@@ -9,3 +9,6 @@
 ```sh
 ./gradlew run -q --console=quiet
 ```
+
+## Author
+-[@kush Trivedi](https://github.com/kushthedude)
