@@ -23,7 +23,7 @@ run{
     standardInput = System.in
 }
 dependencies {
-    testImplementation 'junit:junit: 5.7. 1'
+    testImplementation 'junit:junit:5.7.1'
     testImplementation 'com.github.stefanbirkner:system-rules:1.19.0'
 }
 
