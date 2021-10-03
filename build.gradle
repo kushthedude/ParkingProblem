@@ -38,3 +38,7 @@ test {
         events "passed", "skipped", "failed"
     }
 }
+
+apply plugin: 'java'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
